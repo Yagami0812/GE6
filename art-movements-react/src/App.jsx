@@ -642,7 +642,7 @@ export default function ArtMovements() {
             <em>Through Time</em>
           </h1>
           <p className="hero-subtitle">From Renaissance to Cubism era of arts</p>
-          <p className="hero-note">Hover over artist names to see their portraits</p>
+          <p> Note: Kindly hover over artist names to see their portraits</p>
         </header>
 
         <p className="timeline-label">Timeline — Select a movement to explore</p>
