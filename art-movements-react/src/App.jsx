@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./App.css";
 
 const movements = [
@@ -278,6 +278,35 @@ const references = [
   "Tate Gallery. (n.d.). Art Movements and Styles.",
 ];
 
+function Lightbox({ image, onClose }) {
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", handleKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", handleKey);
+      document.body.style.overflow = "";
+    };
+  }, [onClose]);
+
+  return (
+    <div className="lightbox-overlay" onClick={onClose}>
+      <button className="lightbox-close" onClick={onClose}>
+        ✕ Close
+      </button>
+      <img
+        src={image.src}
+        alt={image.caption}
+        className="lightbox-img"
+        onClick={(e) => e.stopPropagation()}
+      />
+      <p className="lightbox-caption">{image.caption}</p>
+    </div>
+  );
+}
+
 function ArtistTooltip({ artist, accentColor }) {
   const [visible, setVisible] = useState(false);
   const [pos, setPos] = useState({ x: 0, y: 0 });
@@ -345,14 +374,20 @@ function ArtistTooltip({ artist, accentColor }) {
   );
 }
 
-function SampleImageCard({ image, accentColor }) {
+function SampleImageCard({ image, accentColor, onOpen }) {
   return (
     <div
       className="sample-image-card"
       style={{ borderColor: accentColor + "35" }}
+      onClick={() => image.src && onOpen(image)}
     >
       {image.src ? (
-        <img src={image.src} alt={image.caption} className="sample-img" />
+        <div className="sample-img-wrapper">
+          <img src={image.src} alt={image.caption} className="sample-img" />
+          <div className="sample-img-overlay">
+            <span>View full image</span>
+          </div>
+        </div>
       ) : (
         <div className="sample-img-placeholder">
           <span className="placeholder-icon">🖼</span>
@@ -371,11 +406,16 @@ function SampleImageCard({ image, accentColor }) {
 export default function ArtMovements() {
   const [openCard, setOpenCard] = useState(null);
   const [refOpen, setRefOpen] = useState(false);
+  const [lightbox, setLightbox] = useState(null);
 
   const toggle = (id) => setOpenCard((prev) => (prev === id ? null : id));
 
   return (
     <div className="app">
+      {lightbox && (
+        <Lightbox image={lightbox} onClose={() => setLightbox(null)} />
+      )}
+
       <header className="hero">
         <p className="hero-label">Cabanban, Wiljoric Lander B.</p>
         <h1 className="hero-title">
@@ -384,8 +424,6 @@ export default function ArtMovements() {
         </h1>
         <p className="hero-subtitle">From Renaissance to Cubism era of arts</p>
         <p className="hero-note">
-          NOTE:
-          <br/>
           Desktop: Hover over artist names to see their portraits
           <br />
           Mobile: Tap on artist names to see their portraits
@@ -507,6 +545,7 @@ export default function ArtMovements() {
                           key={idx}
                           image={img}
                           accentColor={m.color}
+                          onOpen={setLightbox}
                         />
                       ))}
                     </div>
