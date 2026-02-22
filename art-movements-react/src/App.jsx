@@ -83,7 +83,7 @@ const movements = [
     elements: ["Contrast", "Movement", "Emphasis", "Light", "Drama"],
     sampleImages: [
       {
-        src: "https://cdn.thecollector.com/wp-content/uploads/2024/03/caravaggio-calling-saint-matthew.jpg?width=1200&quality=100&dpr=2",
+        src: "https://primematters.com/sites/default/files/styles/large/public/2020-08/caravaggio-the-calling-of-st-matthew-1200x800-wikimedia-public-domain%20%281%29.jpg?itok=Ha7ODCAR",
         caption: "The Calling of Saint Matthew by Caravaggio, 1599–1600",
       },
       {
@@ -347,24 +347,11 @@ function ArtistTooltip({ artist, accentColor }) {
             zIndex: 9999,
           }}
         >
-          {artist.artistImage ? (
-            <img
-              src={artist.artistImage}
-              alt={artist.name}
-              className="tooltip-portrait"
-            />
-          ) : (
-            <span className="tooltip-placeholder">
-              <span className="tooltip-placeholder-icon">👤</span>
-              <span className="tooltip-placeholder-text">
-                Add portrait to
-                <br />
-                <code>artistImage</code> field
-                <br />
-                <em>{artist.name}</em>
-              </span>
-            </span>
-          )}
+          <img
+            src={artist.artistImage}
+            alt={artist.name}
+            className="tooltip-portrait"
+          />
           <span className="tooltip-name" style={{ color: accentColor }}>
             {artist.name}
           </span>
@@ -381,23 +368,12 @@ function SampleImageCard({ image, accentColor, onOpen }) {
       style={{ borderColor: accentColor + "35" }}
       onClick={() => image.src && onOpen(image)}
     >
-      {image.src ? (
-        <div className="sample-img-wrapper">
-          <img src={image.src} alt={image.caption} className="sample-img" />
-          <div className="sample-img-overlay">
-            <span>View full image</span>
-          </div>
+      <div className="sample-img-wrapper">
+        <img src={image.src} alt={image.caption} className="sample-img" />
+        <div className="sample-img-overlay">
+          <span>View full image</span>
         </div>
-      ) : (
-        <div className="sample-img-placeholder">
-          <span className="placeholder-icon">🖼</span>
-          <span className="placeholder-hint">
-            Replace <code>src: ""</code> in the
-            <br />
-            <code>sampleImages</code> array
-          </span>
-        </div>
-      )}
+      </div>
       <p className="sample-caption">{image.caption}</p>
     </div>
   );

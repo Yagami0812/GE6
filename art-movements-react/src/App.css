@@ -274,48 +274,6 @@ body {
   display: block;
 }
 
-.tooltip-placeholder {
-  width: 160px;
-  height: 192px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.025);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.tooltip-placeholder-icon {
-  font-size: 30px;
-  opacity: 0.35;
-}
-
-.tooltip-placeholder-text {
-  font-size: 11px;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.35);
-  line-height: 1.6;
-  font-family: "Crimson Text", serif;
-  font-style: normal;
-}
-
-.tooltip-placeholder-text code {
-  font-family: "Courier New", monospace;
-  font-size: 10px;
-  background: rgba(255, 255, 255, 0.08);
-  padding: 1px 4px;
-  border-radius: 2px;
-  color: rgba(255, 255, 255, 0.55);
-}
-
-.tooltip-placeholder-text em {
-  font-style: italic;
-  color: rgba(255, 255, 255, 0.55);
-  display: block;
-  margin-top: 4px;
-}
-
 .tooltip-name {
   font-family: "Playfair Display", serif;
   font-size: 13px;
@@ -432,40 +390,6 @@ body {
   padding: 8px 18px;
   border-radius: 1px;
   background: rgba(0, 0, 0, 0.3);
-}
-
-.sample-img-placeholder {
-  width: 100%;
-  height: 250px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  background: rgba(255, 255, 255, 0.025);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.placeholder-icon {
-  font-size: 36px;
-  opacity: 0.22;
-}
-
-.placeholder-hint {
-  font-size: 12px;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.3);
-  line-height: 1.75;
-  font-style: normal;
-}
-
-.placeholder-hint code {
-  font-family: "Courier New", monospace;
-  font-size: 11px;
-  background: rgba(255, 255, 255, 0.07);
-  padding: 1px 5px;
-  border-radius: 2px;
-  color: rgba(255, 255, 255, 0.5);
 }
 
 .sample-caption {
