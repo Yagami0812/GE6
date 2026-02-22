@@ -583,8 +583,10 @@ body {
 }
 
 .lightbox-img {
-  max-width: 90vw;
-  max-height: 80vh;
+  max-width: 92vw;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
   object-fit: contain;
   border-radius: 2px;
   box-shadow: 0 32px 80px rgba(0, 0, 0, 0.8);
@@ -660,8 +662,8 @@ body {
     padding: 8px 20px 24px;
   }
   .lightbox-img {
-    max-width: 95vw;
-    max-height: 75vh;
+    max-width: 96vw;
+    max-height: 80vh;
   }
   .lightbox-close {
     top: 14px;
