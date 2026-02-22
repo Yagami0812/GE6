@@ -128,7 +128,7 @@ const movements = [
     elements: ["Color", "Texture", "Emphasis", "Movement", "Mood"],
     sampleImages: [
       {
-        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9Gchttps://cdn.britannica.com/40/257540-138-6E3B649C/liberty-leading-the-people-eugene-delacroix-explained.jpg?w=800&h=450&c=cropQiRHJBtFhhCaJZ09G5IAiw-UvVe9gj7f4wfw&s",
+        src: "https://artexplainedsimply.com/wp-content/uploads/2025/02/Liberty-Leading-the-People-by-Eugene-Delacroix-1-1024x576.jpg",
         caption: "Liberty Leading the People by Eugène Delacroix, 1830",
       },
       {
