@@ -83,7 +83,7 @@ const movements = [
     elements: ["Contrast", "Movement", "Emphasis", "Light", "Drama"],
     sampleImages: [
       {
-        src: "https://primematters.com/sites/default/files/styles/large/public/2020-08/caravaggio-the-calling-of-st-matthew-1200x800-wikimedia-public-domain%20%281%29.jpg?itok=Ha7ODCAR",
+        src: "https://cdn.thecollector.com/wp-content/uploads/2024/03/caravaggio-calling-saint-matthew.jpg?width=1200&quality=100&dpr=2",
         caption: "The Calling of Saint Matthew by Caravaggio, 1599–1600",
       },
       {
