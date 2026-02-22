@@ -69,7 +69,7 @@ const movements = [
       {
         name: "Peter Paul Rubens",
         artistImage:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Peter_Paul_Rubens_-_Self-Portrait_-_Google_Art_Project.jpg/440px-Peter_Paul_Rubens_-_Self-Portrait_-_Google_Art_Project.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Sir_Peter_Paul_Rubens_-_Portrait_of_the_Artist_-_Google_Art_Project.jpg/960px-Sir_Peter_Paul_Rubens_-_Portrait_of_the_Artist_-_Google_Art_Project.jpg",
       },
     ],
     characteristics: [
