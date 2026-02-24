@@ -150,6 +150,17 @@ body {
   transition: color 0.2s;
 }
 
+.grouped-badge {
+  display: block;
+  font-family: "Crimson Text", serif;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.3);
+  margin-top: 5px;
+}
+
 .card-period {
   font-size: 14px;
   font-style: italic;
@@ -187,7 +198,7 @@ body {
 }
 
 .card-body.open {
-  max-height: 2400px;
+  max-height: 6000px;
   opacity: 1;
 }
 
@@ -400,6 +411,105 @@ body {
   line-height: 1.4;
 }
 
+/* ── Sub-movement panel (Modern Art) ── */
+
+.sub-movements-section {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 4px;
+}
+
+.sub-movement {
+  border: 1px solid;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.015);
+  overflow: hidden;
+}
+
+.sub-movement-header {
+  width: 100%;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 22px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s;
+}
+
+.sub-movement-header:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.sub-movement-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.sub-movement-name {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  flex: 1;
+}
+
+.sub-movement-period {
+  font-family: "Crimson Text", serif;
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.sub-chevron {
+  width: 16px;
+  height: 16px;
+  color: rgba(255, 255, 255, 0.25);
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sub-chevron.open {
+  transform: rotate(180deg);
+}
+
+.sub-movement-body {
+  padding: 4px 22px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  animation: subBodyIn 0.25s ease forwards;
+}
+
+@keyframes subBodyIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sub-description {
+  margin-bottom: 20px;
+  padding-top: 16px;
+  font-size: 16px;
+}
+
+.sub-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 36px;
+}
+
+/* ── References ── */
+
 .ref-section {
   margin-top: 40px;
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -438,7 +548,7 @@ body {
 }
 
 .ref-body.open {
-  max-height: 400px;
+  max-height: 500px;
   opacity: 1;
 }
 
@@ -459,6 +569,8 @@ body {
 .ref-item:last-child {
   border-bottom: none;
 }
+
+/* ── Lightbox ── */
 
 .lightbox-overlay {
   position: fixed;
@@ -538,6 +650,8 @@ body {
   max-width: 600px;
 }
 
+/* ── Responsive ── */
+
 @media (max-width: 768px) {
   .app {
     padding: 40px 20px 60px;
@@ -576,8 +690,15 @@ body {
   .sample-images-section {
     grid-column: 1;
   }
+  .sub-movements-section {
+    grid-column: 1;
+  }
   .sample-images-grid {
     grid-template-columns: 1fr;
+  }
+  .sub-columns {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
   .ref-header {
     padding: 18px 20px;
@@ -637,6 +758,9 @@ body {
   .card-name {
     font-size: 19px;
   }
+  .grouped-badge {
+    font-size: 11px;
+  }
   .card-period {
     font-size: 12px;
   }
@@ -671,18 +795,18 @@ body {
   .sample-img {
     height: 200px;
   }
-  .sample-img-placeholder {
-    height: 200px;
-  }
-  .placeholder-icon {
-    font-size: 28px;
-  }
-  .placeholder-hint {
-    font-size: 11px;
-  }
   .sample-caption {
     font-size: 12px;
     padding: 8px 12px;
+  }
+  .sub-movement-header {
+    padding: 14px 16px;
+  }
+  .sub-movement-name {
+    font-size: 17px;
+  }
+  .sub-movement-body {
+    padding: 4px 16px 20px;
   }
   .ref-header {
     padding: 16px 14px;
